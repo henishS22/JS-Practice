@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body style="background-color:blueviolet;">
+    <h1>Calculator Design Using HTML Layout</h1>
+    <div class="container">
+      <div class="header">Calculator</div>
+      <input type="text" id="box" class="result" />
+      <div class="second-row">
+        <input type="button" id="seven" name="seven" value="7" class="global" />
+        <input type="button" id="eight" name="eight" value="8" class="global" />
+        <input type="button" id="nine" name="nine" value="9" class="global" />
+        <input type="button" id="division" name="" value="/" class="global" />
+      </div>
+      <div class="third-row">
+        <input type="button" id="four" name="four" value="4" class="global" />
+        <input type="button" id="five" name="five" value="5" class="global" />
+        <input type="button" id="six" name="six" value="6" class="global" />
+        <input type="button" id="multi" name="" value="X" class="global" />
+      </div>
+      <div class="fourth-row">
+        <input type="button" id="one" value="1" class="global" />
+        <input type="button" id="two" name="two" value="2" class="global" />
+        <input type="button" id="three" name="three" value="3" class="global" />
+        <input type="button" id="subtract" name="" value="-" class="global" />
+      </div>
+      <div class="conflict">
+        <div class="left">
+          <input type="button" id="zero" name="zero" value="0" class="big" />
+          <input type="button" name="" value="." class="small" />
+          <input
+            type="button"
+            id="del"
+            name=""
+            value="Del"
+            class="red small white-text top-margin"
+          />
+          <input
+            type="button"
+            id="equal"
+            value="="
+            class="green white-text big top-margin"
+          />
+        </div>
+        <div class="right">
+          <input
+            type="button"
+            id="add"
+            name=""
+            value="+"
+            class="global grey plus"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="Scripts/vendor.js"></script>
+    <script src="Scripts/app.js"></script>
+  </body>
+</html>
