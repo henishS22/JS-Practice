@@ -5,6 +5,10 @@ const PAPER = 'PAPER';
 const SISSORS = 'SISSORS';
 const DEFAULT_SELECTION = ROCK;
 
+const PLAYER_WON = 'PLAYER WON';
+const COMPUTER_WON = 'COMPUTER WON';
+const DRAW = 'IT WAS A DRAW';
+
 const gameIsRunning = true;
 
 const getComputerValue = () => {
@@ -28,27 +32,26 @@ const getPlayerChoice = () => {
     return selection;
 }
 
-const result = (pV, cV) => {
-    console.log(`Your choice: ${pV}\nComputer Choice: ${cV}\n`)
+const finalResult = (pV, cV) => {    
     if (pV === cV) {
-        console.log(`Draw!`);
+        return DRAW
     } else if (pV === ROCK) {
-        if (cV == PAPER) {
-            console.log(`Computer Won!`);
+        if (cV == PAPER) {            
+            return COMPUTER_WON;
         } else {
-            console.log(`Player Won!`);
+            return PLAYER_WON;
         }
     } else if (pV === PAPER) {
         if (cV === ROCK) {
-            console.log(`Player Won!`);
+            return PLAYER_WON;
         } else {
-            console.log(`Computer Won!`);
+            return COMPUTER_WON;
         }
     } else {
         if (cV === PAPER) {
-            console.log(`Player Won!`);
+            return PLAYER_WON;
         } else {
-            console.log(`Computer Won!`);
+            return COMPUTER_WON;
         }
     }
 }
@@ -60,7 +63,9 @@ startGameBtn.addEventListener('click', () => {
     console.log('Game is starting...');
     const playerChoice = getPlayerChoice();
     const computerChoice = getComputerValue();
-    result(playerChoice,computerChoice);
-    console.log(playerChoice);
-    console.log(computerChoice);
+    let msg = `Your choice: ${playerChoice}\nComputer Choice: ${computerChoice}\n and `;
+    const result = finalResult(playerChoice,computerChoice);
+    msg = msg+result;
+    console.log(msg);
+    alert(msg);
 });
