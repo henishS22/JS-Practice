@@ -6,7 +6,12 @@ let value = prompt("Please Enter a Value", "100");
 let chosenMaxLife = parseInt(value);
 let log = [];
 
-if (isNaN(value) || value <= 0) {
+try {
+  if (isNaN(value) || value <= 0) {
+    throw { message: "not a valid number" };
+  }
+} catch (error) {
+  console.log(error.message);
   chosenMaxLife = 100;
 }
 
@@ -17,14 +22,14 @@ let cnt = 0;
 
 adjustHealthBars(chosenMaxLife);
 
-function reset() {
+let reset = function () {
   currentMonsterHealth = chosenMaxLife;
   currentPlayerHealth = chosenMaxLife;
   cnt = 0;
   resetGame(chosenMaxLife);
-}
+};
 
-function writeLog(event) {
+let writeLog = function (event) {
   let logobj = {
     eventName: event,
     monsterHealth: currentMonsterHealth,
@@ -32,15 +37,18 @@ function writeLog(event) {
   };
   if (event === "HEAL") {
     logobj.heal = "YES";
-   };
+  }
   log.push(logobj);
-}
+};
 
-function printLog() {
-  console.log(log);
-}
+let printLog = function () {
+  for (let i of log) {
+    console.log("----");
+    console.log(i);
+  }
+};
 
-function result() {
+let result = function () {
   if (currentPlayerHealth <= 0 && bonus) {
     bonus = false;
     currentPlayerHealth += 30;
@@ -61,7 +69,7 @@ function result() {
     alert("Draw!");
     reset();
   }
-}
+};
 function AllAttackHandler(attackValue) {
   const monsterDamage = dealMonsterDamage(attackValue);
   const playerDamage = dealPlayerDamage(attackValue);
