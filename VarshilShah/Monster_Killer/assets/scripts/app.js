@@ -42,7 +42,7 @@ let writeLog = function (event) {
 };
 
 let printLog = function () {
-  for (let i of log) {
+  for (let i of log) {  
     console.log("----");
     console.log(i);
   }
@@ -70,7 +70,7 @@ let result = function () {
     reset();
   }
 };
-function AllAttackHandler(attackValue) {
+let AllAttackHandler = (attackValue) => {
   const monsterDamage = dealMonsterDamage(attackValue);
   const playerDamage = dealPlayerDamage(attackValue);
 
