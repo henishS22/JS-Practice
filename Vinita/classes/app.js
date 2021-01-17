@@ -40,3 +40,6 @@ console.log(catana);
 const aamir = new person('Aamir', 37, 'Indian', 'male');
 const Shweta = new person('Shweta', 14, 'Jamaican', 'female');
 
+//instanceof operator
+adbul instanceof  person;
+//above statement returns true
