@@ -35,7 +35,7 @@ const backdropClickHandler = () => {
 
 const clearMovieModal = () => {
     for (const userInput of userInputs) {
-        userInput.value = ""
+        userInput.value = "";
     }
 };
 
@@ -56,7 +56,7 @@ const renderMovieData = (id, title, imageURL, rating) => {
     li.appendChild(removeBtn);
     removeBtn.addEventListener('click', () => {
         removeMovie(id, li);
-    })
+    });
     ui.appendChild(li);
     entryTextSection.hidden = true;
 };
