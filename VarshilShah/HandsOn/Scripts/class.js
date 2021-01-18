@@ -71,3 +71,13 @@ class pqr extends abc1{
 const p = new pqr();    
 p.display();
 console.log(p.a);       //return undefined
+
+
+////////////////////////
+class hh{
+    static x = 20;
+    static h(){
+        console.log(this.x);
+    }
+}
+hh.h();
