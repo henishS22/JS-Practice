@@ -1,0 +1,68 @@
+body{
+    background-color: #f5f3ec;
+}
+.outer{
+    background-color: #a53e7a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 7rem;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px #66105f;
+}
+form{
+    margin-top: 2rem;
+}
+.inner{
+    margin-top: 2rem;
+    display: inherit;
+    justify-content: center;
+}
+.inpt{
+    border-radius: 15px;
+    outline:none;
+    background-color: #d9f5ec;
+}
+.add-btn{
+    color: #070606;
+    cursor: pointer;
+    font-weight:bolder;
+    outline: none;
+    border-radius: 15px;
+    background-color: #6b7dce;
+}
+.add-btn:hover{
+    background-color: #84c4cf;
+}
+.del-btn{
+    color: #070000;
+    cursor: pointer;
+    font-weight:bolder;
+    outline: none;
+    border-radius: 15px;
+    background-color: #ee2a1c;
+    width:50%;
+}
+.del-btn:hover{
+    background-color: #cc3a4d;
+}
+.inner li{
+    list-style: none;
+    padding: 5px;
+    border: 2px solid #d9f5ec;
+    border-radius: 15px;
+    margin-top: 10px;
+    background-color: #d9f5ec;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.checkbox{
+    margin-right: 10px;
+    border-radius: 15px;
+    height: 15px;
+    width: 15px;
+    background: transparent;
+    border: 2px solid #101666;
+}
