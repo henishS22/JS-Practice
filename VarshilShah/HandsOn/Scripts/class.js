@@ -14,7 +14,7 @@ class RenderPerson {
     li.innerHTML = `
         <label>${this.person.id}</label>
         <label>${this.person.name}</label>
-        <button id = "btn">Add</button>
+        <button>Add</button>
     `;
     const btn = li.querySelector("button");
     btn.addEventListener('click',()=>{
@@ -45,3 +45,29 @@ class PersonList {
 
 const personList = new PersonList();
 personList.render();
+
+
+
+////////////
+class abc1{
+    constructor(id,name){
+        this.id = id;
+        this.name = name;
+    }
+    print(){
+        console.log(this.id, this.name);
+    }
+}
+class pqr extends abc1{
+    #a = 10;        //private
+    constructor(){
+        super(1,"akshay");
+        console.log(this.#a);
+    }
+    display(){
+        super.print();
+    }
+}
+const p = new pqr();    
+p.display();
+console.log(p.a);       //return undefined
