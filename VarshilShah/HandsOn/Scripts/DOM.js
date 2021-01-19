@@ -19,16 +19,14 @@ const btn = document.getElementById("btn");
 btn.addEventListener("click", () => {
   if (h1.className == "h1") h1.className = "h";
   else h1.className = "h1";
-  
+
   //ul.innerHTML+= "<li> hello </li>";
-  ul.insertAdjacentHTML('afterbegin',"<li> hello </li>");
+  ul.insertAdjacentHTML("afterbegin", "<li> hello </li>");
   const all = document.querySelectorAll("li");
   for (const i of all) {
-     i.style.color = "red";
+    i.style.color = "red";
   }
 });
-
-
 
 const newli = document.createElement("li");
 ul.appendChild(newli);
