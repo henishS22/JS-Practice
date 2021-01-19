@@ -17,9 +17,9 @@ class RenderPerson {
         <button>Add</button>
     `;
     const btn = li.querySelector("button");
-    btn.addEventListener('click',()=>{
-        console.log(this.person);
-    })
+    btn.addEventListener("click", () => {
+      console.log(this.person);
+    });
     return li;
   }
 }
@@ -46,38 +46,35 @@ class PersonList {
 const personList = new PersonList();
 personList.render();
 
-
-
 ////////////
-class abc1{
-    constructor(id,name){
-        this.id = id;
-        this.name = name;
-    }
-    print(){
-        console.log(this.id, this.name);
-    }
+class abc1 {
+  constructor(id, name) {
+    this.id = id;
+    this.name = name;
+  }
+  print() {
+    console.log(this.id, this.name);
+  }
 }
-class pqr extends abc1{
-    #a = 10;        //private
-    constructor(){
-        super(1,"akshay");
-        console.log(this.#a);
-    }
-    display(){
-        super.print();
-    }
+class pqr extends abc1 {
+  #a = 10; //private
+  constructor() {
+    super(1, "akshay");
+    console.log(this.#a);
+  }
+  display() {
+    super.print();
+  }
 }
-const p = new pqr();    
+const p = new pqr();
 p.display();
-console.log(p.a);       //return undefined
-
+console.log(p.a); //return undefined
 
 ////////////////////////
-class hh{
-    static x = 20;
-    static h(){
-        console.log(this.x);
-    }
+class hh {
+  static x = 20;
+  static h() {
+    console.log(this.x);
+  }
 }
 hh.h();
