@@ -9,3 +9,4 @@ myButton.addEventListener("click", clickMe.bind(this));
 setTimeout(() => {
   myButton.removeEventListener("click", clickMe);
 }, 3000);
+
