@@ -54,22 +54,32 @@ const moreInfoDiv = () => {
 }
 
 const finishProject = () => {
-    for (const node of finishBtn) {
-        if (node.innerHTML === 'Finish') {
-            node.addEventListener('click', () => {
-                let ul = FINISHED_PROJECTS.querySelector('ul');
-                //    console.log('--------- ', node.parentNode);
-                ul.appendChild(node.parentNode);
-                node.innerHTML = 'Activate';
-            });
-        }
-    }
+    
 }
 
 const activateProject = ()=>{
-    for (const node of activateBtn) {
+   
+}
+
+addNewProjBtn.addEventListener('click', toggleModal);
+cancelMovieModalBtn.addEventListener('click', toggleModal);
+addMovieModalBtn.addEventListener('click', addProject);
+// finishProject();
+// activateProject();
+
+for (const node of finishBtn) {
+    if (node.innerHTML === 'Finish') {
+        node.addEventListener('click', (event) => {
+            let ul = FINISHED_PROJECTS.querySelector('ul');
+            event.preventDefault();
+            //    console.log('--------- ', node.parentNode);
+            ul.appendChild(node.parentNode);
+            node.innerHTML = 'Activate';
+        });
+    }else if(node.innerHTML === 'Activate') {
         node.addEventListener('click', () => {
             let ul = activeProjects.querySelector('ul');
+            event.preventDefault();
             //    console.log('--------- ', node.parentNode);
             ul.appendChild(node.parentNode);
             node.innerHTML = 'Finish';
@@ -77,11 +87,15 @@ const activateProject = ()=>{
     }
 }
 
-addNewProjBtn.addEventListener('click', toggleModal);
-cancelMovieModalBtn.addEventListener('click', toggleModal);
-addMovieModalBtn.addEventListener('click', addProject);
-finishProject();
-activateProject();
+for (const node of activateBtn) {
+    node.addEventListener('click', () => {
+        let ul = activeProjects.querySelector('ul');
+        //    console.log('--------- ', node.parentNode);
+        ul.appendChild(node.parentNode);
+        node.innerHTML = 'Finish';
+    });
+}
+
 //finishBtn.addEventListener('click',finishProject);
 
 
