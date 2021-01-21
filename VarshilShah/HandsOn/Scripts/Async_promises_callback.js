@@ -43,7 +43,7 @@ promise
 function abc() {
   let promise = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve("Done Hello");
+      resolve("Done Hello");
     }, 4000);
   });
   return promise;
@@ -52,6 +52,32 @@ function abc() {
 async function pqr() {
   const p = await abc();
   console.log(p);
-  console.log("bb");        //this called after value of p received because of async await
+  console.log("bb"); //this called after value of p received because of async await
 }
+
 pqr();
+
+//promise.race
+
+Promise.race([                  //race returns fastest promises
+  new Promise((resolved, rejected) => {
+    setTimeout(() => resolved("hello"), 6000);
+  }),
+  new Promise((resolved, rejected) => {
+    setTimeout(() => resolved("bello"), 5000);
+  }),
+]).then((data) => {
+  console.log(data);
+});                             
+
+Promise.all([                  //all returns all promises 
+    new Promise((resolved, rejected) => {
+      setTimeout(() => resolved("hello"), 6000);
+    }),
+    new Promise((resolved, rejected) => {
+      setTimeout(() => resolved("bello"), 5000);
+    }),
+  ]).then((data) => {
+    console.log(data);
+  });                             
+  
