@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // const templatee = document.getElementById("additem");
 // const display = document.querySelector(".posts");
 // const submitBtn = document.getElementById("submit");
@@ -27,7 +28,7 @@
 
 //     xhr.send(JSON.stringify(data));
 //   });
-//   return promise; 
+//   return promise;
 //  */
 //   return fetch(url, {
 //     method: method,
@@ -110,9 +111,6 @@
 //   }
 // });
 
-
-
-
 //using axios
 
 const templatee = document.getElementById("additem");
@@ -124,13 +122,13 @@ const form = document.querySelector("form");
 const ul = document.querySelector("ul");
 const fetchitems = document.getElementById("fetch");
 
-
 async function fetchRequest() {
   try {
+    // eslint-disable-next-line no-undef
     const resultObj = await axios.get(
       "http://jsonplaceholder.typicode.com/posts"
     );
-    console.log(resultObj)
+    console.log(resultObj);
     for (const item of resultObj.data) {
       const postEl = document.importNode(templatee.content, true);
       postEl.querySelector("h2").textContent = item.body;
@@ -152,20 +150,19 @@ async function fetchRequest() {
 }
 
 async function sendData(title, body) {
-  try{
-  const userId = Math.random();
-  const PostObj = {
-    title: title,
-    body: body,
-    userId: userId,
-  };
-  const result = await axios.post(
-    "http://jsonplaceholder.typicode.com/posts",
-    PostObj
-  );
-  console.log(result);
-  }
-  catch(error){
+  try {
+    const userId = Math.random();
+    const PostObj = {
+      title: title,
+      body: body,
+      userId: userId,
+    };
+    const result = await axios.post(
+      "http://jsonplaceholder.typicode.com/posts",
+      PostObj
+    );
+    console.log(result);
+  } catch (error) {
     console.log(error.response);
   }
 }
@@ -189,9 +186,7 @@ submitBtn.addEventListener("click", () => {
 ul.addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON") {
     const id = event.target.closest("li").id;
-    const deletResult = axios.delete(
-      `http://jsonplaceholder.typicode.com/posts/${parseInt(id)}`
-    );
+    axios.delete(`http://jsonplaceholder.typicode.com/posts/${parseInt(id)}`);
     ul.removeChild(event.target.closest("li"));
   }
 });
